@@ -52,7 +52,15 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = input => {};
+const divisibleByFiveTwoToThePower = input => {
+  // filter out elements not divisible by 5 ,filter out elements that are not numbers .filter( e => e%5 === 0)
+  let x = input.map(arr =>
+    arr
+      .filter(e => typeof e === 'number' && e % 5 === 0)
+      .map(element => Math.pow(2, element))
+  );
+  return x;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
