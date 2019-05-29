@@ -3,5 +3,5 @@
 
 ## Week 1 
 
-- [Array Shift] (./401code-challenges/docs/Array_Shift.md)
+- [Array Shift](./401code-challenges/docs/Array_Shift.md)
 
