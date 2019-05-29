@@ -10,4 +10,5 @@ We haven't done any Big O stuff yet, but I think this is an O(n) operation as it
 
 ## Solution
 [Code](../src/main/java/code/challenges/ArrayShift.java)
-![Whiteboard](../docs/whiteboard_arrayshift.jpg)
+
+![Whiteboard](../assets/whiteboard_arrayshift.jpg)
