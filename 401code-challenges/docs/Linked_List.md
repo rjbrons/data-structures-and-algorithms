@@ -1,4 +1,4 @@
-# [Singly Linked List](./401code-challenges/src/main/java/code/challenges/linkedlist/LinkedList.java)
+# [Singly Linked List](../401code-challenges/src/main/java/code/challenges/linkedlist/LinkedList.java)
 This class creates a singly linked list of nodes which can take integers as their value.
 
 ## Challenge
