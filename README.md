@@ -9,4 +9,4 @@
 
 ## Week 2
 
-- [Linked List](./401code-challenges/docs/LinkedList.md). 
+- [Linked List](./401code-challenges/docs/LinkedList.md)
