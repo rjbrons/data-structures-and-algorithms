@@ -16,18 +16,22 @@ public class LinkedList {
     }
 
     public boolean includes(int value){
-        if (this.head == null){
+
+        Node cur = this.head;
+        try {
+            while (cur != null){
+                if (cur.value == value){
+                    return true;
+                } else {
+                    cur = cur.next;
+                }
+            }
+            return false;
+        } catch (Exception e){
+            System.out.println("Operation failed.");
             return false;
         }
-        Node cur = this.head;
-        while (cur != null){
-            if (cur.value == value){
-                return true;
-            } else {
-                cur = cur.next;
-            }
-        }
-        return false;
+
     }
 
     public ArrayList print(){
