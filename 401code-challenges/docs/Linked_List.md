@@ -10,10 +10,18 @@ Create a class for the linked list with the following functionality:
     - checks the list for a given value, returns true if it is found, false if not.
 - print  
     - builds an arraylist of the nodes in the list and returns it.
+- append  
+    - adds a node to end of LL
+- insertBefore  
+    - inserts a node with a given value before a node with a target value.
+- insertAfter  
+    - inserts a node with a given value after a node with a target value.  
+    
+
 
 ## Approach & Efficiency
 Insert is an O(1) operation since it always adds to the front of the list and just changes pointers, it doesn't matter how big the list is.  
-Includes and print are both O(n) operations since they have to navigate through the list one time in order to gather the necessary data to return accurately.  
+Includes, the insertion (append, before, and after) methods,  and print are both O(n) operations since they have to navigate through the list one time in order to gather the necessary data to return accurately.  
 
 
 ## API
@@ -26,3 +34,15 @@ Method on the linked list object.  Takes an integer as an argument, returns true
 .print()  
 Method on the linked list object. Iterates through the linked list and generates an ArrayList of the node values and returns it.
 
+.append(int value)
+LL method.  Creates a new node with value and inserts it at the end of the LL.
+
+.insertBefore(int target, int value)
+Searches list for target value, creates new node with new value and inserts it in front of the target node.  Throws IllegalArgumentException if target value is not in list.
+
+.insertAfter(int target, int value)
+Searches list for target value, creates new node with new value and inserts it after the target node.  Throws IllegalArgumentException if target value is not in list.
+
+
+
+![Whiteboard](../assets/whiteboard_ll_insert.jpg)

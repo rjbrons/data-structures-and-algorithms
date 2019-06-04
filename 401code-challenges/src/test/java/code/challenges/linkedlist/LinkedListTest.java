@@ -95,6 +95,37 @@ public class LinkedListTest {
         testList.insert(10);
         testList.insertAfter(5, 7);
         assertEquals("should output array as string", new ArrayList<Integer>(Arrays.asList(10, 5, 7)), testList.print());
+    }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void insertAfter_empty_list() {
+        LinkedList testList = new LinkedList();
+        testList.insertAfter(5,3);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void insertBefore_empty_list() {
+        LinkedList testList = new LinkedList();
+        testList.insertBefore(5,3);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void insertAfter_value_not_included() {
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        testList.insert(5);
+        testList.insert(5);
+        testList.insert(10);
+        testList.insertAfter(7,3);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void insertBefore_value_not_included() {
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        testList.insert(10);
+        testList.insert(5);
+        testList.insert(10);
+        testList.insertBefore(22, 7);
     }
 }
