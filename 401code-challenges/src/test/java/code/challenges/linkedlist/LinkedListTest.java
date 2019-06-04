@@ -70,4 +70,31 @@ public class LinkedListTest {
         testList.insert(10);
         assertEquals("should output array as string", new ArrayList<Integer>(Arrays.asList(10, 5, 5, 5)), testList.print());
     }
+
+    @Test
+    public void append() {
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        testList.append(10);
+        assertEquals("next node from head should be inserted node", 10, testList.head.next.value);
+    }
+
+    @Test
+    public void insertBefore() {
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        testList.insert(10);
+        testList.insertBefore(5, 7);
+        assertEquals("should output array as string", new ArrayList<Integer>(Arrays.asList(10, 7, 5)), testList.print());
+    }
+
+    @Test
+    public void insertAfter() {
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        testList.insert(10);
+        testList.insertAfter(5, 7);
+        assertEquals("should output array as string", new ArrayList<Integer>(Arrays.asList(10, 5, 7)), testList.print());
+
+    }
 }
