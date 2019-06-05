@@ -78,6 +78,35 @@ public class LinkedList {
         this.genericInsert(target, value, 'a');
     }
 
+    public int kthFromEnd(int k) throws IllegalArgumentException {
+        if (this.head == null){
+            throw new IllegalArgumentException("There are no nodes in the list.");
+        } else if (k < 0){
+            throw new IllegalArgumentException("Negative values of k are not allowed.");
+        }
+        int target = k;
+        Node hare = null;
+        hare = this.head;
+        Node tortoise = null;
+        while (hare != null){
+            if (target > 0) {
+                target--;
+                hare = hare.next;
+            } else if (target == 0){
+                tortoise = this.head;
+                hare = hare.next;
+                target--;
+            } else {
+                hare = hare.next;
+                tortoise = tortoise.next;
+            }
+        }
+        if (tortoise == null){
+            throw new IllegalArgumentException(String.format("There aren't %d values in the list.", k));
+        }
+        return tortoise.value;
+    }
+
     public ArrayList print(){
         ArrayList<Integer> output = new ArrayList();
         if (this.head == null){
