@@ -128,4 +128,79 @@ public class LinkedListTest {
         testList.insert(10);
         testList.insertBefore(22, 7);
     }
+
+    @Test
+    public void test_kth_from_end(){
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        testList.insert(10);
+        testList.insert(5);
+        testList.insert(10);
+        int testVal = testList.kthFromEnd(2);
+        assertEquals("Should return 5", 5, testVal);
+    }
+
+    @Test
+    public void test_kth_from_end_single_value(){
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        int testVal = testList.kthFromEnd(0);
+        assertEquals("Should return 5", 5, testVal);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_kth_from_end_k_is_listLength(){
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        testList.insert(10);
+        testList.insert(5);
+        testList.insert(10);
+        int testVal = testList.kthFromEnd(4);
+    }
+
+    @Test
+    public void test_kth_from_end2(){
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        testList.insert(10);
+        testList.insert(15);
+        testList.insert(20);
+        int testVal = testList.kthFromEnd(3);
+        assertEquals("Should return 15", 20, testVal);
+    }
+
+    @Test
+    public void test_kth_from_end_k_of_zero(){
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        testList.insert(10);
+        testList.insert(15);
+        testList.insert(20);
+        int testVal = testList.kthFromEnd(0);
+        assertEquals("Should return 5", 5, testVal);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_kth_from_end_negativre_k(){
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        testList.insert(10);
+        testList.insert(5);
+        testList.insert(10);
+        int testVal = testList.kthFromEnd(-1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_kth_from_end_short_list(){
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        testList.insert(10);
+        int testVal = testList.kthFromEnd(4);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_kth_from_end_empty_list(){
+        LinkedList testList = new LinkedList();
+        int testVal = testList.kthFromEnd(0);
+    }
 }
