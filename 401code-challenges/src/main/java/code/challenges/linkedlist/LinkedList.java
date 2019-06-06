@@ -126,6 +126,7 @@ public class LinkedList {
         if (temp1 == null){
             cur1.next = cur2;
         } else {
+            cur1.next = cur2;
             cur2.next = temp1;
         }
         return l1;
