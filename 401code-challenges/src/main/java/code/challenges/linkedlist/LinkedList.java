@@ -1,5 +1,7 @@
 package code.challenges.linkedlist;
 
+import sun.awt.image.ImageWatched;
+
 import java.util.ArrayList;
 
 public class LinkedList {
@@ -65,9 +67,6 @@ public class LinkedList {
                 cur = cur.next;
                 }
             }
-
-
-
     }
 
     public void insertBefore(int target, int value){
@@ -107,6 +106,31 @@ public class LinkedList {
         return tortoise.value;
     }
 
+    public static LinkedList mergeLists(LinkedList l1, LinkedList l2){
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
+        Node cur1 = l1.head;
+        Node cur2 = l2.head;
+        Node temp1 = cur1.next;
+        Node temp2 = cur2.next;
+
+        while (cur1.next != null && cur2.next != null){
+            cur1.next = cur2;
+            cur2.next = temp1;
+            if (temp1 == null || temp2 == null) break;
+            cur1 = temp1;
+            cur2 = temp2;
+            temp1 = temp1.next;
+            temp2 = temp2.next;
+        }
+        if (temp1 == null){
+            cur1.next = cur2;
+        } else {
+            cur2.next = temp1;
+        }
+        return l1;
+    }
+
     public ArrayList print(){
         ArrayList<Integer> output = new ArrayList();
         if (this.head == null){
@@ -118,6 +142,10 @@ public class LinkedList {
             cur = cur.next;
         }
         return output;
+    }
+
+    public String toString(){
+        return this.print().toString();
     }
 
 }
