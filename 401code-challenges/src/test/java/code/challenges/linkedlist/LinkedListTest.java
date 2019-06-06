@@ -203,4 +203,98 @@ public class LinkedListTest {
         LinkedList testList = new LinkedList();
         int testVal = testList.kthFromEnd(0);
     }
+
+    @Test
+    public void test_ll_merge(){
+        LinkedList testList = new LinkedList();
+        testList.insert(7);
+        testList.insert(5);
+        testList.insert(3);
+        testList.insert(1);
+        LinkedList otherList = new LinkedList();
+        otherList.insert(8);
+        otherList.insert(6);
+        otherList.insert(4);
+        otherList.insert(2);
+        LinkedList output = LinkedList.mergeLists(testList, otherList);
+        assertEquals("Output list should be 1,2,3,4,5,6,7,8", "[1, 2, 3, 4, 5, 6, 7, 8]", output.toString());
+    }
+
+    @Test
+    public void test_ll_merge_uneven_list1(){
+        LinkedList testList = new LinkedList();
+        testList.insert(1);
+        LinkedList otherList = new LinkedList();
+        otherList.insert(5);
+        otherList.insert(4);
+        otherList.insert(3);
+        otherList.insert(2);
+        LinkedList output = LinkedList.mergeLists(testList, otherList);
+        assertEquals("Output list should be 1,2,3,4,5", "[1, 2, 3, 4, 5]", output.toString());
+    }
+
+    @Test
+    public void test_ll_merge_use_case(){
+        LinkedList testList = new LinkedList();
+        testList.insert(2);
+        testList.insert(3);
+        testList.insert(1);
+        LinkedList otherList = new LinkedList();
+        otherList.insert(4);
+        otherList.insert(9);
+        otherList.insert(5);
+        LinkedList output = LinkedList.mergeLists(testList, otherList);
+        assertEquals("Output list should be 1, 5, 3, 9, 2, 4", "[1, 5, 3, 9, 2, 4]", output.toString());
+    }
+
+    @Test
+    public void test_ll_merge_uneven_list(){
+        LinkedList testList = new LinkedList();
+        testList.insert(3);
+        testList.insert(1);
+        LinkedList otherList = new LinkedList();
+        otherList.insert(4);
+        otherList.insert(9);
+        otherList.insert(5);
+        LinkedList output = LinkedList.mergeLists(testList, otherList);
+        assertEquals("Output list should be 1, 5, 3, 9, 4", "[1, 5, 3, 9, 4]", output.toString());
+    }
+
+    @Test
+    public void test_ll_merge_uneven_list2(){
+        LinkedList testList = new LinkedList();
+        testList.insert(2);
+        testList.insert(3);
+        testList.insert(1);
+        LinkedList otherList = new LinkedList();
+        otherList.insert(9);
+        otherList.insert(5);
+        LinkedList output = LinkedList.mergeLists(testList, otherList);
+        assertEquals("Output list should be 1, 5, 3, 9, 2", "[1, 5, 3, 9, 2]", output.toString());
+    }
+
+    @Test
+    public void test_ll_merge_uneven_list3(){
+        LinkedList testList = new LinkedList();
+        testList.insert(2);
+        testList.insert(3);
+        testList.insert(1);
+        LinkedList otherList = new LinkedList();
+        otherList.insert(9);
+        LinkedList output = LinkedList.mergeLists(testList, otherList);
+        assertEquals("Output list should be 1, 9, 3, 2", "[1, 9, 3, 2]", output.toString());
+    }
+
+    @Test
+    public void test_single_item_lists(){
+        LinkedList testList = new LinkedList();
+        testList.insert(2);
+        LinkedList otherList = new LinkedList();
+        otherList.insert(9);
+        LinkedList output = LinkedList.mergeLists(testList, otherList);
+
+        assertEquals("[2, 9]", output.toString());
+    }
+
+
 }
