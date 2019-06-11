@@ -10,9 +10,9 @@ public class Node {
     }
 
     //setter for node value
-    public void setValue(int val){
-        this.value = val;
-    }
+//    public void setValue(int val){
+//        this.value = val;
+//    }
 
     //getter for node value
     public int getValue(){

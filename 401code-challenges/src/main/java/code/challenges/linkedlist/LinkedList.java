@@ -14,7 +14,6 @@ public class LinkedList {
 
     public void insert(int value){
         this.head = new Node(value, this.head);
-
     }
 
     public boolean includes(int value){

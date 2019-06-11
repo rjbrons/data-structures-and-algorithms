@@ -1,6 +1,7 @@
 package code.challenges.stacksandqueues;
 
 import code.challenges.linkedlist.Node;
+import com.sun.xml.internal.messaging.saaj.packaging.mime.util.QEncoderStream;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -34,6 +35,17 @@ public class QueueTest {
         assertEquals("Deque should return the value of the front node", 1, testQ.dequeue());
         assertEquals("2nd node should now be front", 2, testQ.front.getValue());
         assertEquals("Back value should not be changed", 3, testQ.back.getValue());
+    }
+
+    @Test
+    public void test_enqueue_dequeue_enqueue(){
+        Queue testQ = new Queue();
+        testQ.enqueue(1);
+        testQ.dequeue();
+        testQ.enqueue(2);
+        assertEquals("After enqueue dequeue enqueue process front and back should be same", 2, testQ.front.getValue());
+        assertEquals("After enqueue dequeue enqueue process front and back should be same", 2, testQ.back.getValue());
+
     }
 
     @Test

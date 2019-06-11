@@ -2,6 +2,8 @@ package code.challenges.stacksandqueues;
 
 import code.challenges.linkedlist.Node;
 
+import java.net.HttpURLConnection;
+
 public class Queue {
 
     Node front;
