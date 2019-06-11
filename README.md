@@ -10,3 +10,7 @@
 ## Week 2
 
 - [Linked List](./401code-challenges/docs/Linked_List.md)
+
+## Week 3
+
+- [Stacks and Queues](./401code-challenges/docs/Stack_and_Queue.md)
