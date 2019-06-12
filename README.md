@@ -15,3 +15,4 @@
 
 - [Stacks and Queues](./401code-challenges/docs/Stack_and_Queue.md)
 - [PseudoQueue](./401code-challenges/docs/PseudoQueue.md)
+- [Animal Shelter](./401code-challenges/docs/AnimalShelter.md)
