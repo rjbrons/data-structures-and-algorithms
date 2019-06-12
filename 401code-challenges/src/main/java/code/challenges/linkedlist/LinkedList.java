@@ -4,8 +4,8 @@ import sun.awt.image.ImageWatched;
 
 import java.util.ArrayList;
 
-public class LinkedList {
-    Node head;
+public class LinkedList<V> {
+    Node<V> head;
 
     public LinkedList(){
         Node head = null;
@@ -16,7 +16,7 @@ public class LinkedList {
         this.head = new Node(value, this.head);
     }
 
-    public boolean includes(int value){
+    public boolean includes(V value){
 
         Node cur = this.head;
         try {
@@ -43,7 +43,7 @@ public class LinkedList {
         cur.next = new Node(val, null);
     }
 
-    private void genericInsert(int val, int newVal, char c) throws IllegalArgumentException {
+    private void genericInsert(V val, V newVal, char c) throws IllegalArgumentException {
         Node cur = this.head;
         if (cur == null){
             throw new IllegalArgumentException("Target value not found in List");
@@ -68,24 +68,24 @@ public class LinkedList {
             }
     }
 
-    public void insertBefore(int target, int value){
+    public void insertBefore(V target, V value){
         this.genericInsert(target, value, 'b');
     }
 
-    public void insertAfter(int target, int value){
+    public void insertAfter(V target, V value){
         this.genericInsert(target, value, 'a');
     }
 
-    public int kthFromEnd(int k) throws IllegalArgumentException {
+    public V kthFromEnd(int k) throws IllegalArgumentException {
         if (this.head == null){
             throw new IllegalArgumentException("There are no nodes in the list.");
         } else if (k < 0){
             throw new IllegalArgumentException("Negative values of k are not allowed.");
         }
         int target = k;
-        Node hare = null;
+        Node<V> hare = null;
         hare = this.head;
-        Node tortoise = null;
+        Node<V> tortoise = null;
         while (hare != null){
             if (target > 0) {
                 target--;
@@ -132,11 +132,11 @@ public class LinkedList {
     }
 
     public ArrayList print(){
-        ArrayList<Integer> output = new ArrayList();
+        ArrayList<V> output = new ArrayList();
         if (this.head == null){
             return output;
         }
-        Node cur = this.head;
+        Node<V> cur = this.head;
         while (cur != null){
             output.add(cur.value);
             cur = cur.next;
