@@ -4,8 +4,8 @@ import code.challenges.linkedlist.Node;
 
 import java.util.EmptyStackException;
 
-public class Stack {
-    Node top;
+public class Stack<V> {
+    Node<V> top;
 
     //Constructor for stack
     public Stack(){
@@ -13,22 +13,22 @@ public class Stack {
     }
 
     //Add a node to the top of the stack with input value.
-    public void push(int val){
+    public void push(V val){
         this.top = new Node(val, this.top);
     }
 
     //Pop off the top node and return its value.
-    public int pop() throws EmptyStackException {
+    public V pop() throws EmptyStackException {
         if (this.top == null){
             throw new EmptyStackException();
         }
-        int temp = this.peek();
+        V temp = this.peek();
         this.top = this.top.getNext();
         return temp ;
     }
 
     //Return the value of the top node.
-    public int peek() throws EmptyStackException {
+    public V peek() throws EmptyStackException {
         if (this.top == null){
             throw new EmptyStackException();
         }

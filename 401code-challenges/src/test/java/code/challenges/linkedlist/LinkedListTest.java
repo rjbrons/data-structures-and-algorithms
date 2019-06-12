@@ -1,7 +1,6 @@
 package code.challenges.linkedlist;
 
 import org.junit.Test;
-import sun.awt.image.ImageWatched;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +17,7 @@ public class LinkedListTest {
 
     @Test
     public void test_insert_adds_to_head() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Object> testList = new LinkedList<>();
         testList.insert(5);
         assertEquals("empty linked list should have null head", 5, testList.head.value);
     }
@@ -35,7 +34,7 @@ public class LinkedListTest {
 
     @Test
     public void test_includes_returns_true() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<>();
         testList.insert(5);
         testList.insert(5);
         testList.insert(5);
@@ -46,7 +45,7 @@ public class LinkedListTest {
 
     @Test
     public void test_includes_returns_false() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<>();
         testList.insert(5);
         testList.insert(5);
         testList.insert(5);
@@ -57,7 +56,7 @@ public class LinkedListTest {
 
     @Test
     public void test_empty_ll_includes_returns_false() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         assertFalse(testList.includes(5));
     }
 
@@ -81,7 +80,7 @@ public class LinkedListTest {
 
     @Test
     public void insertBefore() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<>();
         testList.insert(5);
         testList.insert(10);
         testList.insertBefore(5, 7);
@@ -90,7 +89,7 @@ public class LinkedListTest {
 
     @Test
     public void insertAfter() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<>();
         testList.insert(5);
         testList.insert(10);
         testList.insertAfter(5, 7);
@@ -99,19 +98,19 @@ public class LinkedListTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void insertAfter_empty_list() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.insertAfter(5,3);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void insertBefore_empty_list() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.insertBefore(5,3);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void insertAfter_value_not_included() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<>();
         testList.insert(5);
         testList.insert(5);
         testList.insert(5);
@@ -121,7 +120,7 @@ public class LinkedListTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void insertBefore_value_not_included() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<>();
         testList.insert(5);
         testList.insert(10);
         testList.insert(5);
@@ -131,7 +130,7 @@ public class LinkedListTest {
 
     @Test
     public void test_kth_from_end(){
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<>();
         testList.insert(5);
         testList.insert(10);
         testList.insert(5);
@@ -142,7 +141,7 @@ public class LinkedListTest {
 
     @Test
     public void test_kth_from_end_single_value(){
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<>();
         testList.insert(5);
         int testVal = testList.kthFromEnd(0);
         assertEquals("Should return 5", 5, testVal);
@@ -150,7 +149,7 @@ public class LinkedListTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void test_kth_from_end_k_is_listLength(){
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.insert(5);
         testList.insert(10);
         testList.insert(5);
@@ -160,7 +159,7 @@ public class LinkedListTest {
 
     @Test
     public void test_kth_from_end2(){
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<>();
         testList.insert(5);
         testList.insert(10);
         testList.insert(15);
@@ -171,7 +170,7 @@ public class LinkedListTest {
 
     @Test
     public void test_kth_from_end_k_of_zero(){
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<>();
         testList.insert(5);
         testList.insert(10);
         testList.insert(15);
@@ -182,7 +181,7 @@ public class LinkedListTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void test_kth_from_end_negativre_k(){
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.insert(5);
         testList.insert(10);
         testList.insert(5);
@@ -192,7 +191,7 @@ public class LinkedListTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void test_kth_from_end_short_list(){
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.insert(5);
         testList.insert(10);
         int testVal = testList.kthFromEnd(4);
@@ -200,7 +199,7 @@ public class LinkedListTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void test_kth_from_end_empty_list(){
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         int testVal = testList.kthFromEnd(0);
     }
 
