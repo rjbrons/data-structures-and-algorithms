@@ -27,6 +27,10 @@ public class Stack<V> {
         return temp ;
     }
 
+    public boolean empty(){
+        return this.top == null;
+    }
+
     //Return the value of the top node.
     public V peek() throws EmptyStackException {
         if (this.top == null){
