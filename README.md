@@ -17,3 +17,7 @@
 - [PseudoQueue](./401code-challenges/docs/PseudoQueue.md)
 - [Animal Shelter](./401code-challenges/docs/AnimalShelter.md)
 - [Multi Bracket Validation](./401code-challenges/docs/MultiBracketValidation.md)
+
+## Week 4
+
+- [Trees](./401code-challenges/docs/Trees.md)
