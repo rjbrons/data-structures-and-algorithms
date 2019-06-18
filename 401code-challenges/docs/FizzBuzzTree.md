@@ -1,4 +1,4 @@
-# [FizzBuzzTree](../src/main/java/code/challenges/MultiBracketValidation/FizzBuzzTree.java)
+# [FizzBuzzTree](../src/main/java/code/challenges/FizzBuzzTree.java)
 Conduct “FizzBuzz” on a tree while traversing through it. Change the values of each of the nodes dependent on the current node’s value
 
 ## Challenge Description
