@@ -21,3 +21,4 @@
 ## Week 4
 
 - [Trees](./401code-challenges/docs/Trees.md)
+- [FizzBuzzTree](./401code-challenges/docs/FizzBuzzTree.md)
