@@ -1,5 +1,7 @@
 package code.challenges.tree;
 
+import code.challenges.stacksandqueues.Queue;
+
 import java.util.ArrayList;
 
 public class BinaryTree<T> extends Tree{
@@ -27,7 +29,6 @@ public class BinaryTree<T> extends Tree{
         }
         return;
     }
-
 
 
     public ArrayList<T> inOrder(TreeNode<T> root){
@@ -67,5 +68,22 @@ public class BinaryTree<T> extends Tree{
         }
         list.add(root.getValue());
         return;
+    }
+
+
+    public void breadthFirst(BinaryTree<T> tree){
+        Queue<TreeNode> tempQueue = new Queue<>();
+        TreeNode<T> curr = tree.getRoot();
+        tempQueue.enqueue(curr);
+
+        while (!tempQueue.isEmpty()){
+            curr = tempQueue.dequeue();
+            System.out.println(curr.getValue());
+            if (curr.getLeft() != null)
+                tempQueue.enqueue(curr.getLeft());
+            if (curr.getRight() != null)
+                tempQueue.enqueue(curr.getRight());
+        }
+
     }
 }

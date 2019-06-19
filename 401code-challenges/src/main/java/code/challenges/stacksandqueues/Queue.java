@@ -42,4 +42,8 @@ public class Queue<V> {
         return this.front.getValue();
     }
 
+    public boolean isEmpty(){
+        return this.front == null ? true : false;
+    }
+
 }
