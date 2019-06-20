@@ -11,7 +11,7 @@ Binary trees should have traversal methods:
 - preOrder - traverse the list and return a collection based on the root, l.child, r.child traversal pattern.
 - postOrder - traverse the list and return a collection based on the l.child, r.child, root traversal pattern.
 - breadthFirst - traverse the list "breadth first" so.. row by row, printing out the value of each node.
-
+- maxValue - traverse the tree and find the node with the highest value, return that value.
 
 
 
@@ -34,6 +34,7 @@ traversal efficiency is O(n) since every node is visited.
 
 .breadthFirst() - traverse the tree by breadth first (smallest breadth to widest breadth, or row by row) prints out the values of each node as it is visited.
 
+.maxValue() - traverse the list breadth first and return the maximum value in the tree.
 
 ### Binary Search Tree - subclass of the Binary Tree class
 

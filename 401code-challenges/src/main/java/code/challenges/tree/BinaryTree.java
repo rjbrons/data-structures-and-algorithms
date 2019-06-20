@@ -86,4 +86,23 @@ public class BinaryTree<T> extends Tree{
         }
 
     }
+
+    public Integer maxValue(BinaryTree<Integer> tree){
+        if (tree.getRoot() == null ){
+            return Integer.MIN_VALUE;
+        }
+        Integer max = Integer.MIN_VALUE;
+        Queue<TreeNode> tempQ = new Queue<>();
+        TreeNode<Integer> curr = tree.getRoot();
+        tempQ.enqueue(curr);
+        while   (!tempQ.isEmpty()){
+            curr = tempQ.dequeue();
+            max = Math.max(curr.getValue(), max);
+            if (curr.getLeft() != null)
+                tempQ.enqueue(curr.getLeft());
+            if (curr.getRight() != null)
+                tempQ.enqueue(curr.getRight());
+        }
+        return max;
+    }
 }
