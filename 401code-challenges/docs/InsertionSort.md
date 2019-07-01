@@ -9,6 +9,8 @@ The Big O for this is O(n^2)  I believe, due to the fact that you are iterating 
 
 
 ## Solution
-[Code](../src/main/java/code/challenges/Sort.java)
+[Code](../src/main/java/code/challenges/Sort.java)  
+[Lecture Notes](../docs/LECTURE-NOTES-INSERTION.md)  
 
 ![Whiteboard](../assets/whiteboard_insertionSort.jpg)
+
