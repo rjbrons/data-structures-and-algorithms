@@ -1,4 +1,4 @@
-# [Binary Tree max value](../src/main/java/code/challenges/BinaryTree.java)
+# [Binary Tree max value](../src/main/java/code/challenges/tree/BinaryTree.java)
 Given a Binary tree, find the max value in the tree.
 
 ## Challenge Description

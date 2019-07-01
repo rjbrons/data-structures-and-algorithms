@@ -1,4 +1,4 @@
-# [Breadth First Traversal](../src/main/java/code/challenges/BinaryTree.java)
+# [Breadth First Traversal](../src/main/java/code/challenges/tree/BinaryTree.java)
 Conduct “FizzBuzz” on a tree while traversing through it. Change the values of each of the nodes dependent on the current node’s value
 
 ## Challenge Description
