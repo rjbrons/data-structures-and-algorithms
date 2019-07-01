@@ -23,3 +23,7 @@
 - [Trees](./401code-challenges/docs/Trees.md)
 - [FizzBuzzTree](./401code-challenges/docs/FizzBuzzTree.md)
 - [Breadth-First Traversal](./401code-challenges/docs/BFT.md)
+
+## Week 6
+
+- [Insertion Sort](./401code-challenges/docs/InsertionSort.md)
