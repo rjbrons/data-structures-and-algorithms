@@ -1,4 +1,4 @@
-# Insertion Sort
+# Merge Sort
 
 ## Description
 Complete a working, tested implementation of Merge Sort, based on the pseudo code provided
