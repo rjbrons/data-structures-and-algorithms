@@ -67,40 +67,68 @@ public class Sort {
 
         return arr;
     }
+
+    public static int[] quickSort(int lh, int rh, int[] arr){
+        if (arr == null || arr.length == 0) return arr;
+        int partitionIndex;
+        if (lh < rh){
+            partitionIndex = partition(lh, rh, arr);
+            quickSort(lh, partitionIndex, arr);
+            quickSort(partitionIndex + 1, rh, arr);
+        }
+        return arr;
+    }
+
+    private static int partition(int lh, int rh, int[] arr){
+        int pivotIndex = lh;
+        while (lh < rh){
+            while(arr[lh] <= arr[pivotIndex]){
+                lh++;
+            }
+            while(arr[rh] > arr[pivotIndex]){
+                rh--;
+            }
+            if (lh < rh )
+                swap(lh, rh, arr);
+        }
+        swap(pivotIndex, rh, arr);
+        return rh;
+    }
+
+    private static void swap(int lh, int rh, int[] arr){
+        int temp = arr[lh];
+        arr[lh] = arr[rh];
+        arr[rh] = temp;
+    }
 }
 
-//    ALGORITHM Mergesort(arr)
-//    DECLARE n <-- arr.length
+//    ALGORITHM QuickSort(arr, left, right)
+//    if left < right
+//// Partition the array by setting the position of the pivot value
+//        DEFINE position <-- Partition(arr, left, right)
+//        // Sort the left
+//        QuickSort(arr, left, position - 1)
+//        // Sort the right
+//        QuickSort(arr, position + 1, right)
 //
-//        if arr.length > 1
-//        DECLARE mid <-- n/2
-//        DECLARE b <-- arr[0...mid]
-//        DECLARE c <-- arr[mid...n]
-//        // break down the left side
-//        Mergesort(b)
-//        // break down the right side
-//        Mergesort(c)
-//        // merge the left and the right side together
-//        Merge(b, c, arr)
+//        ALGORITHM Partition(arr, left, right)
+//        // set a pivot value as a point of reference
+//        DEFINE pivot <-- arr[right]
+//        // create a variable to track the largest index of numbers lower than the defined pivot
+//        DEFINE low <-- left - 1
+//        for i <- left to right do
+//        if arr[i] <= pivot
+//        low++
+//        Swap(arr, i, low)
 //
-//        ALGORITHM Merge(b, c, a)
-//        DECLARE i <-- 0
-//        DECLARE j <-- 0
-//        DECLARE k <-- 0
+//        // place the value of the pivot location in the middle.
+//        // all numbers smaller than the pivot are on the left, larger on the right.
+//        Swap(arr, right, low + 1)
+//        // return the pivot index point
+//        return low + 1
 //
-//        while i < b && j < c
-//        if b[i] <= c[j]
-//                a[k] <-- b[i]
-//        i <-- i + 1
-//        else
-//        a[k] = c[j]
-//        j <-- j + 1
-//
-//        k <-- k + 1
-//
-//        if i = b.length
-//        add remaining items in array c to array a
-//        else
-//        add remaining items in array b to array a
-//
-//        return a
+//        ALGORITHM Swap(arr, i, low)
+//        DEFINE temp;
+//        temp <-- arr[i]
+//        arr[i] <-- arr[low]
+//        arr[low] <-- temp

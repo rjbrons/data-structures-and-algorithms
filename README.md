@@ -29,4 +29,6 @@
 
 - [Insertion Sort](./401code-challenges/docs/InsertionSort.md)
 - [Merge Sort](./401code-challenges/docs/MergeSort.md)
+- [Quick Sort](./401code-challenges/docs/QuickSort.md)
+
 

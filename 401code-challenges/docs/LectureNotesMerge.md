@@ -1,4 +1,4 @@
-# Lecture Notes: Insertion Sort
+# Lecture Notes: Merge Sort
 
 ## Objectives:   
 - Merge Sort
