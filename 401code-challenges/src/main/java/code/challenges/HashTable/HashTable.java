@@ -1,8 +1,10 @@
 package code.challenges.HashTable;
 
-public class HashTable {
+import static java.lang.StrictMath.abs;
 
-    HashNode[] buckets;
+public class HashTable<V> {
+
+    HashNode<V>[] buckets;
 
     public HashTable(){
         this.buckets = new HashNode[1024];
@@ -13,7 +15,7 @@ public class HashTable {
     }
 
 
-    public void add(String key, String value){
+    public void add(String key, V value){
         int hashedKey = hash(key);
         HashNode node = new HashNode(key, value);
         if (buckets[hashedKey] == null){
@@ -24,18 +26,17 @@ public class HashTable {
         }
     }
 
-
-    public String get(String key){
+    public Object get(String key){
         int i = hash(key);
         if (buckets[i] == null) return null;
-        else if (buckets[i].getNext() == null) return buckets[i].getValue();
+        else if (buckets[i].next == null) return buckets[i].value;
         else {
             HashNode cur = buckets[i];
             while (cur != null){
-                if (cur.getKey() == key){
-                    return cur.getValue();
+                if (cur.key == key){
+                    return cur.value;
                 }
-                cur = cur.getNext();
+                cur = cur.next;
             }
         }
         return null;
@@ -46,8 +47,7 @@ public class HashTable {
         return false;
     }
 
-    public int hash(String key){
-        return (key.hashCode() * 599 ) % buckets.length;
+    protected int hash(String key){
+        return abs((key.hashCode() * 599 ) % buckets.length);
     }
-
 }

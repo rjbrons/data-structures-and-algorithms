@@ -1,13 +1,13 @@
 package code.challenges.HashTable;
 
-public class HashNode<T> {
+public class HashNode<V> {
     HashNode next;
     String key;
-    String value;
+    V value;
 
     public HashNode(){}
 
-    public HashNode(String key, String value){
+    public HashNode(String key, V value){
         this.key = key;
         this.value = value;
     }
@@ -28,11 +28,11 @@ public class HashNode<T> {
         this.key = key;
     }
 
-    public String getValue() {
+    public V getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(V value) {
         this.value = value;
     }
 
