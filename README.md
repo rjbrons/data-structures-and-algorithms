@@ -31,4 +31,6 @@
 - [Merge Sort](./401code-challenges/docs/MergeSort.md)
 - [Quick Sort](./401code-challenges/docs/QuickSort.md)
 
+## Week 7
 
+- [Hash Table](./401code-challenges/docs/HashTable.md)
