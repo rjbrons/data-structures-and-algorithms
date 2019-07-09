@@ -29,4 +29,4 @@ Hash tables generally perform on a O(1) efficiency since you are adding and find
 - .contains(key) -- takes the key and returns a boolean on whether it is in the hashtable or not.
 
 ## Solution
-[Code](../src/main/java/code/challenges/HashTable.java)   
+[Code](../src/main/java/code/challenges/HashTable/HashTable.java)   
