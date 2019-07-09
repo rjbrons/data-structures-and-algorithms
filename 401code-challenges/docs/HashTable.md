@@ -26,4 +26,7 @@ Hash tables generally perform on a O(1) efficiency since you are adding and find
 
 - .add(key, value) -- takes the key/value pair and adds it to the hashtable
 - .get(key) -- takes the key and returns its value.
-- .contains(key) -- takes the key and returns a boolean on whether it is in the hashtable or not. 
+- .contains(key) -- takes the key and returns a boolean on whether it is in the hashtable or not.
+
+## Solution
+[Code](../src/main/java/code/challenges/HashTable.java)   
