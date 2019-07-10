@@ -34,4 +34,4 @@
 ## Week 7
 
 - [Hash Table](./401code-challenges/docs/HashTable.md)
-- [Repeated Word](./401.code-challenges/docs/RepeatedWord.md)
+- [Repeated Word](./401code-challenges/docs/RepeatedWord.md)
