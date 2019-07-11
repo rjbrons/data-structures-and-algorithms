@@ -35,3 +35,4 @@
 
 - [Hash Table](./401code-challenges/docs/HashTable.md)
 - [Repeated Word](./401.code-challenges/docs/RepeatedWord.md)
+- [Tree Intersection](./401.code-challenges/docs/TreeIntersection.md)
