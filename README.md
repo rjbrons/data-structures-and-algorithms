@@ -40,3 +40,4 @@
 ## Week 8
 
 - [Left Join](./401code-challenges/docs/LeftJoin.md)
+
