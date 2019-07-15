@@ -34,5 +34,10 @@
 ## Week 7
 
 - [Hash Table](./401code-challenges/docs/HashTable.md)
-- [Repeated Word](./401code-challenges/docs/RepeatedWord.md)
-- [Tree Intersection](./401code-challenges/docs/TreeIntersection.md)
+- [Repeated Word](./401.code-challenges/docs/RepeatedWord.md)
+- [Tree Intersection](./401.code-challenges/docs/TreeIntersection.md)
+
+## Week 8
+
+- [Left Join](./401code-challenges/docs/LeftJoin.md)
+
