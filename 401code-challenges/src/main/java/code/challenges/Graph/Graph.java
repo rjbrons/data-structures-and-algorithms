@@ -10,8 +10,14 @@ public class Graph {
     }
 
 
-    public Vertex addVertex(){
+    public Vertex addVertex(int val){
+        Vertex temp = new Vertex(val);
+        this.vertices.add(temp);
+        return temp;
+    }
 
+    public void addEdge(Vertex nodeA, Vertex nodeB){
+        nodeA.addEdge(null, );
     }
 }
 
