@@ -1,6 +1,9 @@
 package code.challenges.Graph;
 
+import code.challenges.stacksandqueues.Queue;
+
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Graph {
     ArrayList<Vertex> vertices;
@@ -18,6 +21,26 @@ public class Graph {
 
     public void addEdge(Vertex nodeA, Vertex nodeB){
         nodeA.addEdge(null, );
+    }
+
+    public void breadthFirstTraversal(Vertex start){
+        Queue<Vertex> toVisit = new Queue<>();
+        ArrayList<Vertex> output = new ArrayList<>();
+        HashSet<Vertex> visited = new HashSet<>();
+        toVisit.enqueue(start);
+
+        while (!toVisit.isEmpty()){
+            Vertex curr = toVisit.dequeue();
+            output.add(curr);
+            visited.add(curr);
+            if (curr.neighbors != null){
+                for (Vertex neighbor : curr.neighbors){
+                    toVisit.enqueue(neighbor);
+                }
+            }
+
+        }
+
     }
 }
 
