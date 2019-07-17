@@ -28,7 +28,7 @@ public class Graph {
         dest.addEdge(wt, source);
     }
 
-    public ArrayList<Vertex> getNodes(){
+    public ArrayList<Vertex> getVertices(){
         return this.vertices;
     }
 
@@ -45,14 +45,18 @@ public class Graph {
         Queue<Vertex> toVisit = new Queue<>();
         ArrayList<Vertex> output = new ArrayList<>();
         HashSet<Vertex> visited = new HashSet<>();
+        visited.add(start);
+        Vertex curr = null;
         toVisit.enqueue(start);
-        while (!toVisit.isEmpty() && !visited.contains(curr)){
-            Vertex curr = toVisit.dequeue();
+        while (!toVisit.isEmpty()){
+            curr = toVisit.dequeue();
             output.add(curr);
             visited.add(curr);
-            if (curr.edges != null){
+            if (curr.edges.size() != 0){
                 for (Edge edge : curr.edges){
-                    toVisit.enqueue(edge.getDestination());
+                    if ( !visited.contains(edge.getDestination())){
+                        toVisit.enqueue(edge.getDestination());
+                    }
                 }
             }
         }
