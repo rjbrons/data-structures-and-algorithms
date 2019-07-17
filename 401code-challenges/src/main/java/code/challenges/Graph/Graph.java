@@ -1,6 +1,8 @@
 package code.challenges.Graph;
 
+import code.challenges.stacksandqueues.Queue;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Graph {
     ArrayList<Vertex> vertices;
@@ -9,33 +11,55 @@ public class Graph {
         this.vertices = new ArrayList<Vertex>();
     }
 
-
     public Vertex addVertex(int val){
         Vertex temp = new Vertex(val);
         this.vertices.add(temp);
         return temp;
     }
 
-    public void addEdge(Vertex nodeA, Vertex nodeB){
-        nodeA.addEdge(null, );
+    public void addEdge(Vertex source, Vertex dest){
+        source.addEdge(dest);
+        dest.addEdge(source);
+
+    }
+
+    public void addEdge(Vertex source, Vertex dest, int wt){
+        source.addEdge(wt, dest);
+        dest.addEdge(wt, source);
+    }
+
+    public ArrayList<Vertex> getVertices(){
+        return this.vertices;
+    }
+
+    public ArrayList<Edge> getNeighbors(Vertex target){
+        return target.edges;
+    }
+
+    public int size(){
+        return vertices.size();
+    }
+
+    //For the breadth-first-traversal
+    public ArrayList<Vertex> breadthFirstTraversal(Vertex start){
+        Queue<Vertex> toVisit = new Queue<>();
+        ArrayList<Vertex> output = new ArrayList<>();
+        HashSet<Vertex> visited = new HashSet<>();
+        visited.add(start);
+        Vertex curr = null;
+        toVisit.enqueue(start);
+        while (!toVisit.isEmpty()){
+            curr = toVisit.dequeue();
+            output.add(curr);
+            visited.add(curr);
+            if (curr.edges.size() != 0){
+                for (Edge edge : curr.edges){
+                    if ( !visited.contains(edge.getDestination())){
+                        toVisit.enqueue(edge.getDestination());
+                    }
+                }
+            }
+        }
+        return output;
     }
 }
-
-
-//    AddNode
-//    Adds a new node to the graph
-//        Takes in the value of that node
-//        Returns the added node
-//    AddEdge()
-//        Adds a new edge between two nodes in the graph
-//        Include the ability to have a “weight”
-//        Takes in the two nodes to be connected by the edge
-//        Both nodes should already be in the Graph
-//    GetNodes()
-//        Returns all of the nodes in the graph as a collection (set, list, or similar)
-//     GetNeighbors()
-//        Returns a collection of nodes connected to the given node
-//        Takes in a given node
-//        Include the weight of the connection in the returned collection
-//     Size()
-//        Returns the total number of nodes in the graph

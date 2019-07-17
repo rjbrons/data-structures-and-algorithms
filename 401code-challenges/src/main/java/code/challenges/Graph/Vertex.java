@@ -10,11 +10,16 @@ public class Vertex {
     public Vertex(){}
 
     public Vertex(int value){
+        this.edges = new ArrayList<>();
         this.value = value;
     }
 
-    protected void addEdge(int wt, Vertex src, Vertex dest){
-        edges.add(new Edge(wt, src, dest));
+    protected void addEdge(Vertex dest){
+        edges.add(new Edge(dest));
+    }
+
+    public void addEdge(int wt, Vertex dest){
+        edges.add(new Edge(wt, dest));
     }
 
 
