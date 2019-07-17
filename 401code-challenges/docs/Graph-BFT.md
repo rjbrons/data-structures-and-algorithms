@@ -13,5 +13,5 @@ O(n) since we need to work through the whole graph.
 
 ## Solution
 [Code](../src/main/java/code/challenges/Graph/Graph.java)  
-<!--![Whiteboard](../assets/whiteboard_bft_graph.jpg)-->
+![Whiteboard](../assets/whiteboard_bft_graph.jpg)
  

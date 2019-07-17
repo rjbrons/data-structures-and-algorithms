@@ -71,7 +71,23 @@ public class GraphTest {
         assertEquals(1, test.size());
     }
 
-//    @Test
-////    public void breadthFirstTraversal() {
-////    }
+    @Test
+    public void breadthFirstTraversal() {
+        Graph test = new Graph();
+        test.addVertex(5);
+        test.addVertex(4);
+        test.addVertex(6);
+        test.addVertex(1);
+        test.addVertex(9);
+        test.addEdge(test.getVertices().get(1), test.getVertices().get(0));
+        test.addEdge(test.getVertices().get(1), test.getVertices().get(2));
+        test.addEdge(test.getVertices().get(2), test.getVertices().get(3));
+        test.addEdge(test.getVertices().get(2), test.getVertices().get(4));
+        ArrayList<Vertex> output = test.breadthFirstTraversal(test.getVertices().get(1));
+        assertEquals(4, output.get(0).value);
+        assertEquals(5, output.get(1).value);
+        assertEquals(6, output.get(2).value);
+        assertEquals(1, output.get(3).value);
+        assertEquals(9, output.get(4).value);
+    }
 }
