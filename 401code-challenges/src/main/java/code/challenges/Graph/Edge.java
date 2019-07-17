@@ -2,18 +2,17 @@ package code.challenges.Graph;
 
 public class Edge {
     int weight;
-    Vertex source;
     Vertex destination;
 
     public Edge(){};
 
-    public Edge(int wt){
-        this.weight = wt;
+    protected Edge(Vertex dest){
+        this.destination = dest;
+        this.weight = 1;
     }
 
-    public Edge(int wt, Vertex src, Vertex dest){
+    protected Edge(int wt,  Vertex dest){
         this.weight = wt;
-        this.source = src;
         this.destination = dest;
     }
 
@@ -24,14 +23,6 @@ public class Edge {
 
     public void setWeight(int weight) {
         this.weight = weight;
-    }
-
-    public Vertex getSource() {
-        return source;
-    }
-
-    public void setSource(Vertex source) {
-        this.source = source;
     }
 
     public Vertex getDestination() {
