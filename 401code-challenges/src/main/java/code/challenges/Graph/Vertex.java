@@ -2,14 +2,14 @@ package code.challenges.Graph;
 
 import java.util.ArrayList;
 
-public class Vertex {
-    int value;
+public class Vertex<T> {
+    T value;
     ArrayList<Edge> edges;
 
 
     public Vertex(){}
 
-    public Vertex(int value){
+    public Vertex(T value){
         this.edges = new ArrayList<>();
         this.value = value;
     }
@@ -25,11 +25,11 @@ public class Vertex {
 
 //Getters and Setters
 
-    public int getValue(){
+    public T getValue(){
         return this.value;
     }
 
-    public void setValue(int val){
+    public void setValue(T val){
         this.value = val;
     }
 
