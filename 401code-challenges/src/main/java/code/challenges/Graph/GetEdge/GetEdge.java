@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class GetEdge {
+    //new fields for the GetEdge Class
+    Boolean canGetThere;
+    int cost;
+
     ArrayList<Vertex> vertices;
 
     public GetEdge(){
